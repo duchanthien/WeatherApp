@@ -16,4 +16,9 @@
 
     <!-- the activated state color for a forecast list item -->
     <color name="activated">#E0E0E0</color>
+
+    <color name="grey">#cccccc</color>
+    <color name="grey_700">#646464</color>
+    <color name="black">#000000</color>
+
 </resources>

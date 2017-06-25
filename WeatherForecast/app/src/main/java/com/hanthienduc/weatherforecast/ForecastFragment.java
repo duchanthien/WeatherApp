@@ -181,7 +181,7 @@ public class ForecastFragment extends Fragment implements LoaderManager.LoaderCa
     }
 
     // since we read the location when we create the loader, all we need to do is restart things
-    void onLocationChanged( ) {
+    void onLocationChanged() {
         updateWeather();
         getLoaderManager().restartLoader(FORECAST_LOADER, null, this);
     }
@@ -240,10 +240,17 @@ public class ForecastFragment extends Fragment implements LoaderManager.LoaderCa
      */
     @Override
     public void onClick(long date) {
-        Intent weatherDetailIntent = new Intent(getActivity(), DetailActivity.class);
+        /*Intent weatherDetailIntent = new Intent(getActivity(), DetailActivity.class);
         Uri uriForDateClicked = WeatherContract.WeatherEntry.buildWeatherUriWithDate(date);
         weatherDetailIntent.setData(uriForDateClicked);
         startActivity(weatherDetailIntent);
+*/
+        String locationSetting = Utility.getPreferredLocation(getActivity());
+        ((Callback) getActivity())
+                .onItemSelected(WeatherContract.WeatherEntry.buildWeatherLocationWithDate(
+                        locationSetting, date
+                ));
+
     }
 
     /**
