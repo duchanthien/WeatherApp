@@ -1,16 +1,34 @@
 package com.hanthienduc.weatherforecast;
 
-import android.preference.Preference;
-import android.preference.PreferenceActivity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 
-/**
- * Created by hanth on 25/06/2017.
- */
 
-public class SettingsActivity extends PreferenceActivity
-implements Preference.OnPreferenceChangeListener{
+public class SettingsActivity extends AppCompatActivity {
+
     @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        return false;
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // Add 'general' preferences, defined in the XML file
+        setContentView(R.layout.activity_settings);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public Intent getParentActivityIntent() {
+        return super.getParentActivityIntent().addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
     }
 }
