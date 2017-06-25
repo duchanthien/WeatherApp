@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements ForecastFragment.
             }
             DetailFragment df = (DetailFragment)getSupportFragmentManager().findFragmentByTag(DETAILFRAGMENT_TAG);
             if ( null != df ) {
-               // df.onLocationChanged(location);
+                df.onLocationChanged(location);
             }
             mLocation = location;
         }
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements ForecastFragment.
             // adding or replacing the detail fragment using a
             // fragment transaction.
             Bundle args = new Bundle();
-            //args.putParcelable(DetailFragment.DETAIL_URI, contentUri);
+            args.putParcelable(DetailFragment.DETAIL_URI, contentUri);
 
             DetailFragment fragment = new DetailFragment();
             fragment.setArguments(args);
