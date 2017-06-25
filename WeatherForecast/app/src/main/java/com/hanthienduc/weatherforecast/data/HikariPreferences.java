@@ -22,7 +22,7 @@ import android.preference.PreferenceManager;
 import com.hanthienduc.weatherforecast.R;
 
 
-public final class SunshinePreferences {
+public final class HikariPreferences {
 
     /*
      * In order to uniquely pinpoint the location on the map when we launch the map intent, we
@@ -224,7 +224,7 @@ public final class SunshinePreferences {
      */
     public static long getEllapsedTimeSinceLastNotification(Context context) {
         long lastNotificationTimeMillis =
-                SunshinePreferences.getLastNotificationTimeInMillis(context);
+                HikariPreferences.getLastNotificationTimeInMillis(context);
         long timeSinceLastNotification = System.currentTimeMillis() - lastNotificationTimeMillis;
         return timeSinceLastNotification;
     }

@@ -12,7 +12,7 @@ public class HikariSyncService extends Service {
 
     @Override
     public void onCreate() {
-        Log.d("SunshineSyncService", "onCreate - SunshineSyncService");
+        Log.d("HikariSyncService", "onCreate - HikariSyncService");
         synchronized (sSyncAdapterLock) {
             if (sHikariSyncAdapter == null) {
                 sHikariSyncAdapter = new HikariSyncAdapter(getApplicationContext(), true);

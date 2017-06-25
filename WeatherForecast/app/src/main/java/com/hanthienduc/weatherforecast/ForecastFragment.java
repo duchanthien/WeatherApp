@@ -20,7 +20,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
-import com.hanthienduc.weatherforecast.data.SunshinePreferences;
+import com.hanthienduc.weatherforecast.data.HikariPreferences;
 import com.hanthienduc.weatherforecast.data.WeatherContract;
 import com.hanthienduc.weatherforecast.sync.HikariSyncAdapter;
 
@@ -123,7 +123,7 @@ public class ForecastFragment extends Fragment implements LoaderManager.LoaderCa
     }
 
     private void openPreferredLocationInMap() {
-        double[] coords = SunshinePreferences.getLocationCoordinates(getContext());
+        double[] coords = HikariPreferences.getLocationCoordinates(getContext());
         String posLat = Double.toString(coords[0]);
         String posLong = Double.toString(coords[1]);
         Uri geoLocation = Uri.parse("geo:" + posLat + "," + posLong);
