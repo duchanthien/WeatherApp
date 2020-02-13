@@ -1,5 +1,5 @@
 # WeatherApp
-This is the simple Android weather app that shows current weather, forecast and user can search for city to show their weather from openweathermap.org API. It was developed as a part from interview process for fresher Android Position in IBSystem, Japan. note: Version 2
+This is the simple Android weather app that shows current weather, forecast and user can search for city to show their weather from openweathermap.org API. It was developed as a learning android process.
 
 # Feature
 * Current weather
